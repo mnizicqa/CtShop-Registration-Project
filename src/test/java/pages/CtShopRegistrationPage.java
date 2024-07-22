@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -59,6 +60,12 @@ public class CtShopRegistrationPage extends BasePage {
 
     @FindBy(css = "h1")
     WebElement title;
+
+    @FindBy(css = ".error-message")
+    List<WebElement> errorMessage;
+
+    @FindBy(css = "#terms_of_purchase")
+    WebElement termsOfPurchaseCheckbox;
 
     public void checkIfLogoIsDisplayed() {
         assertTrueDisplayed(logo, "Logo displayed!");
@@ -120,4 +127,37 @@ public class CtShopRegistrationPage extends BasePage {
         assertEQ(title.getText(), "Moj nalog", "Title!");
     }
 
+    public void checkErrorMessageIfFirstNameEmpty() {
+        assertEQ(errorMessage.get(0).getText(), "Niste uneli ime!", "First name empty!");
+    }
+
+    public void checkErrorMessageIfLastNameEmpty() {
+        assertEQ(errorMessage.get(0).getText(), "Niste uneli prezime!", "Last name empty!");
+    }
+
+    public void checkErrorMessageIfEmailEmpty() {
+        assertEQ(errorMessage.get(0).getText(), "Niste uneli email!", "Email empty!");
+    }
+
+    public void checkErrorMessageIfPasswordEmpty() {
+        assertEQ(errorMessage.get(0).getText(), "Niste uneli šifru!", "Password empty!");
+    }
+
+    public void clickOnTermsOfPurchaseCheckbox() throws Exception {
+        click(termsOfPurchaseCheckbox, "Terms of purchase checkbox!");
+    }
+
+    public void checkErrorMessageIfTermsOfPurchaseCheckboxNotSelected() {
+        assertEQ(errorMessage.get(0).getText(), "Molimo vas da prihvatite Uslove kupovine kako biste nastavili sa registracijom.", "Terms of purchase checkbox not selected!");
+    }
+
+    public void checkAllErrorMessages() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(errorMessage.get(0).getText(), "Niste uneli ime!");
+        softAssert.assertEquals(errorMessage.get(1).getText(), "Niste uneli prezime!");
+        softAssert.assertEquals(errorMessage.get(2).getText(), "Niste uneli email!");
+        softAssert.assertEquals(errorMessage.get(3).getText(), "Niste uneli šifru!");
+        softAssert.assertEquals(errorMessage.get(4).getText(), "Molimo vas da prihvatite Uslove kupovine kako biste nastavili sa registracijom.");
+        softAssert.assertAll();
+    }
 }

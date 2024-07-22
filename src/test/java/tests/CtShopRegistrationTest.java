@@ -61,4 +61,88 @@ public class CtShopRegistrationTest extends BaseTest {
         ctShopRegistrationPage.clickOnLoginButton();
         ctShopRegistrationPage.checkTitle();
     }
+
+    @Test
+    public void CtShopRegistrationFirstNameEmpty() throws Exception {
+        CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
+        ctShopRegistrationPage.checkIfLogoIsDisplayed();
+        ctShopRegistrationPage.clickOnProfileLink();
+        ctShopRegistrationPage.clickOnEmailLoginButton();
+        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.enterLastName();
+        ctShopRegistrationPage.enterEmail();
+        ctShopRegistrationPage.enterPassword();
+        ctShopRegistrationPage.clickOnRegisterButton();
+        ctShopRegistrationPage.checkErrorMessageIfFirstNameEmpty();
+    }
+
+    @Test(enabled = false)
+    public void CtShopRegistrationLastNameEmpty() throws Exception {
+        CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
+        ctShopRegistrationPage.checkIfLogoIsDisplayed();
+        ctShopRegistrationPage.clickOnProfileLink();
+        ctShopRegistrationPage.clickOnEmailLoginButton();
+        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.enterFirstName();
+        ctShopRegistrationPage.enterEmail();
+        ctShopRegistrationPage.enterPassword();
+        ctShopRegistrationPage.clickOnRegisterButton();
+        ctShopRegistrationPage.checkErrorMessageIfLastNameEmpty();
+    }
+
+    @Test
+    public void CtShopRegistrationEmailEmpty() throws Exception {
+        CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
+        ctShopRegistrationPage.checkIfLogoIsDisplayed();
+        ctShopRegistrationPage.clickOnProfileLink();
+        ctShopRegistrationPage.clickOnEmailLoginButton();
+        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.enterFirstName();
+        ctShopRegistrationPage.enterLastName();
+        ctShopRegistrationPage.enterPassword();
+        ctShopRegistrationPage.clickOnRegisterButton();
+        ctShopRegistrationPage.checkErrorMessageIfEmailEmpty();
+    }
+
+    @Test
+    public void CtShopRegistrationPasswordEmpty() throws Exception {
+        CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
+        ctShopRegistrationPage.checkIfLogoIsDisplayed();
+        ctShopRegistrationPage.clickOnProfileLink();
+        ctShopRegistrationPage.clickOnEmailLoginButton();
+        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.enterFirstName();
+        ctShopRegistrationPage.enterLastName();
+        ctShopRegistrationPage.enterEmail();
+        ctShopRegistrationPage.clickOnRegisterButton();
+        ctShopRegistrationPage.checkErrorMessageIfPasswordEmpty();
+    }
+
+    @Test
+    public void CtShopRegistrationTermsOfPurchaseCheckboxNotSelected() throws Exception {
+        CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
+        ctShopRegistrationPage.checkIfLogoIsDisplayed();
+        ctShopRegistrationPage.clickOnProfileLink();
+        ctShopRegistrationPage.clickOnEmailLoginButton();
+        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.enterFirstName();
+        ctShopRegistrationPage.enterLastName();
+        ctShopRegistrationPage.enterEmail();
+        ctShopRegistrationPage.enterPassword();
+        ctShopRegistrationPage.clickOnTermsOfPurchaseCheckbox();
+        ctShopRegistrationPage.clickOnRegisterButton();
+        ctShopRegistrationPage.checkErrorMessageIfTermsOfPurchaseCheckboxNotSelected();
+    }
+
+    @Test
+    public void CtShopRegistrationAllFieldsEmptyOrNotSelected() throws Exception {
+        CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
+        ctShopRegistrationPage.checkIfLogoIsDisplayed();
+        ctShopRegistrationPage.clickOnProfileLink();
+        ctShopRegistrationPage.clickOnEmailLoginButton();
+        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.clickOnTermsOfPurchaseCheckbox();
+        ctShopRegistrationPage.clickOnRegisterButton();
+        ctShopRegistrationPage.checkAllErrorMessages();
+    }
 }
