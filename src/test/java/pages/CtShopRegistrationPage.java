@@ -83,6 +83,13 @@ public class CtShopRegistrationPage extends BasePage {
         click(createAccountLink, "Create account link!");
     }
 
+    public void getToRegisterForm() throws Exception {
+        checkIfLogoIsDisplayed();
+        clickOnProfileLink();
+        clickOnEmailLoginButton();
+        clickOnCreateAccountLink();
+    }
+
     public void enterFirstName() throws Exception {
         typeText(firstNameField, "Tester", "First name field!");
     }

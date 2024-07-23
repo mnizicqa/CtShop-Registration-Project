@@ -34,10 +34,7 @@ public class CtShopRegistrationTest extends BaseTest {
     @Test
     public void CtShopRegistration() throws Exception {
         CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
-        ctShopRegistrationPage.checkIfLogoIsDisplayed();
-        ctShopRegistrationPage.clickOnProfileLink();
-        ctShopRegistrationPage.clickOnEmailLoginButton();
-        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.getToRegisterForm();
         ctShopRegistrationPage.enterFirstName();
         ctShopRegistrationPage.enterLastName();
         ctShopRegistrationPage.enterEmail();
@@ -65,10 +62,7 @@ public class CtShopRegistrationTest extends BaseTest {
     @Test
     public void CtShopRegistrationFirstNameEmpty() throws Exception {
         CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
-        ctShopRegistrationPage.checkIfLogoIsDisplayed();
-        ctShopRegistrationPage.clickOnProfileLink();
-        ctShopRegistrationPage.clickOnEmailLoginButton();
-        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.getToRegisterForm();
         ctShopRegistrationPage.enterLastName();
         ctShopRegistrationPage.enterEmail();
         ctShopRegistrationPage.enterPassword();
@@ -76,13 +70,10 @@ public class CtShopRegistrationTest extends BaseTest {
         ctShopRegistrationPage.checkErrorMessageIfFirstNameEmpty();
     }
 
-    @Test(enabled = false)
+    @Test
     public void CtShopRegistrationLastNameEmpty() throws Exception {
         CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
-        ctShopRegistrationPage.checkIfLogoIsDisplayed();
-        ctShopRegistrationPage.clickOnProfileLink();
-        ctShopRegistrationPage.clickOnEmailLoginButton();
-        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.getToRegisterForm();
         ctShopRegistrationPage.enterFirstName();
         ctShopRegistrationPage.enterEmail();
         ctShopRegistrationPage.enterPassword();
@@ -93,10 +84,7 @@ public class CtShopRegistrationTest extends BaseTest {
     @Test
     public void CtShopRegistrationEmailEmpty() throws Exception {
         CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
-        ctShopRegistrationPage.checkIfLogoIsDisplayed();
-        ctShopRegistrationPage.clickOnProfileLink();
-        ctShopRegistrationPage.clickOnEmailLoginButton();
-        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.getToRegisterForm();
         ctShopRegistrationPage.enterFirstName();
         ctShopRegistrationPage.enterLastName();
         ctShopRegistrationPage.enterPassword();
@@ -107,10 +95,7 @@ public class CtShopRegistrationTest extends BaseTest {
     @Test
     public void CtShopRegistrationPasswordEmpty() throws Exception {
         CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
-        ctShopRegistrationPage.checkIfLogoIsDisplayed();
-        ctShopRegistrationPage.clickOnProfileLink();
-        ctShopRegistrationPage.clickOnEmailLoginButton();
-        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.getToRegisterForm();
         ctShopRegistrationPage.enterFirstName();
         ctShopRegistrationPage.enterLastName();
         ctShopRegistrationPage.enterEmail();
@@ -121,10 +106,7 @@ public class CtShopRegistrationTest extends BaseTest {
     @Test
     public void CtShopRegistrationTermsOfPurchaseCheckboxNotSelected() throws Exception {
         CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
-        ctShopRegistrationPage.checkIfLogoIsDisplayed();
-        ctShopRegistrationPage.clickOnProfileLink();
-        ctShopRegistrationPage.clickOnEmailLoginButton();
-        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.getToRegisterForm();
         ctShopRegistrationPage.enterFirstName();
         ctShopRegistrationPage.enterLastName();
         ctShopRegistrationPage.enterEmail();
@@ -137,10 +119,7 @@ public class CtShopRegistrationTest extends BaseTest {
     @Test
     public void CtShopRegistrationAllFieldsEmptyOrNotSelected() throws Exception {
         CtShopRegistrationPage ctShopRegistrationPage = new CtShopRegistrationPage(driver);
-        ctShopRegistrationPage.checkIfLogoIsDisplayed();
-        ctShopRegistrationPage.clickOnProfileLink();
-        ctShopRegistrationPage.clickOnEmailLoginButton();
-        ctShopRegistrationPage.clickOnCreateAccountLink();
+        ctShopRegistrationPage.getToRegisterForm();
         ctShopRegistrationPage.clickOnTermsOfPurchaseCheckbox();
         ctShopRegistrationPage.clickOnRegisterButton();
         ctShopRegistrationPage.checkAllErrorMessages();
