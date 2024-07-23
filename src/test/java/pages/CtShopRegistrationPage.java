@@ -67,27 +67,11 @@ public class CtShopRegistrationPage extends BasePage {
     @FindBy(css = "#terms_of_purchase")
     WebElement termsOfPurchaseCheckbox;
 
-    public void checkIfLogoIsDisplayed() {
-        assertTrueDisplayed(logo, "Logo displayed!");
-    }
-
-    public void clickOnProfileLink() throws Exception {
-        click(profileLink, "Profile link!");
-    }
-
-    public void clickOnEmailLoginButton() throws Exception {
-        click(emailLoginButton, "Email login button!");
-    }
-
-    public void clickOnCreateAccountLink() throws Exception {
-        click(createAccountLink, "Create account link!");
-    }
-
     public void getToRegisterForm() throws Exception {
-        checkIfLogoIsDisplayed();
-        clickOnProfileLink();
-        clickOnEmailLoginButton();
-        clickOnCreateAccountLink();
+        assertTrueDisplayed(logo, "Logo displayed!");
+        click(profileLink, "Profile link!");
+        click(emailLoginButton, "Email login button!");
+        click(createAccountLink, "Create account link!");
     }
 
     public void enterFirstName() throws Exception {
