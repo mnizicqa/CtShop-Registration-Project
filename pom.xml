@@ -7,7 +7,29 @@
     <groupId>org.example</groupId>
     <artifactId>CtShopRegistration</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <url>https://ctshop.rs</url>
+    <description>
+        This is a project which I have done to solidify my Selenium testing framework skill. The goal of the project was
+        to automate CtShop website.
+    </description>
+    <scm>
+        <url>https://github.com/mnizicqa/CtShop-Registration-Project</url>
+    </scm>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Mario Nizic</name>
+            <url>https://www.linkedin.com/in/mario-nizic/</url>
+            <roles>
+                <role>Owner</role>
+            </roles>
+        </developer>
+    </developers>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
