@@ -9,11 +9,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.CtShopRegistrationPageJSON;
 import pages.YopmailPageJSON;
-import utils.DataUtilSuccessfulRegistration;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class CtShopRegistrationTestJSON extends BaseTest {
@@ -33,21 +31,21 @@ public class CtShopRegistrationTestJSON extends BaseTest {
         }
     }
 
-    @Test(dataProviderClass = DataUtilSuccessfulRegistration.class, dataProvider = "dataProviderSuccessfulRegistration")
-    public void CtShopRegistration(HashMap<String,String> hashMap) throws Exception {
+    @Test
+    public void CtShopRegistration() throws Exception {
         CtShopRegistrationPageJSON ctShopRegistrationPageJSON = new CtShopRegistrationPageJSON(driver);
         ctShopRegistrationPageJSON.getToRegisterForm();
-        ctShopRegistrationPageJSON.enterFirstName(hashMap.get("First Name"));
-        ctShopRegistrationPageJSON.enterLastName(hashMap.get("Last Name"));
-        ctShopRegistrationPageJSON.enterEmail(hashMap.get("Email"));
-        ctShopRegistrationPageJSON.enterPassword(hashMap.get("Password"));
-        ctShopRegistrationPageJSON.clickOnSubscribeCheckbox(hashMap.get("Subscribe Checkbox"));
+        ctShopRegistrationPageJSON.enterFirstName("Tester007");
+        ctShopRegistrationPageJSON.enterLastName("Testerovic");
+        ctShopRegistrationPageJSON.enterEmail("tester007@yopmail.com");
+        ctShopRegistrationPageJSON.enterPassword("Qatester1309");
+        ctShopRegistrationPageJSON.clickOnSubscribeCheckbox("is_subscribed");
         ctShopRegistrationPageJSON.clickOnRegisterButton();
         ctShopRegistrationPageJSON.checkRegistrationMessage();
 
         YopmailPageJSON yopmailPageJSON = new YopmailPageJSON(driver);
         yopmailPageJSON.goToYopmail();
-        yopmailPageJSON.enterEmailAddress(hashMap.get("User Name"));
+        yopmailPageJSON.enterEmailAddress("tester007");
         yopmailPageJSON.switchToIframe();
         yopmailPageJSON.clickOnConfirmationLink();
 
@@ -55,8 +53,8 @@ public class CtShopRegistrationTestJSON extends BaseTest {
         List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(windowHandles.get(1));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#login_email")));
-        ctShopRegistrationPageJSON.enterLoginEmail(hashMap.get("Login Email"));
-        ctShopRegistrationPageJSON.enterLoginPassword(hashMap.get("Login Password"));
+        ctShopRegistrationPageJSON.enterLoginEmail("tester007@yopmail.com");
+        ctShopRegistrationPageJSON.enterLoginPassword("Qatester1309");
         ctShopRegistrationPageJSON.clickOnLoginButton();
         ctShopRegistrationPageJSON.checkTitle();
     }
