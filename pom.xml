@@ -38,6 +38,7 @@
         <testNg-version>7.9.0</testNg-version>
         <webdrivermanager-version>5.8.0</webdrivermanager-version>
         <commons-io-version>2.16.0</commons-io-version>
+        <json-simple-version>1.1.1</json-simple-version>
         <allure.version>2.25.0</allure.version>
         <aspectj.version>1.9.20.1</aspectj.version>
     </properties>
@@ -73,6 +74,12 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons-io-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>${json-simple-version}</version>
         </dependency>
     </dependencies>
     <build>

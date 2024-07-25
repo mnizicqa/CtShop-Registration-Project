@@ -8,7 +8,7 @@
 
     <test name="Ct Shop Registration">
         <classes>
-            <class name="tests.CtShopRegistrationTest"/>
+            <class name="tests.CtShopRegistrationTestJSON"/>
         </classes>
     </test>
 </suite>
