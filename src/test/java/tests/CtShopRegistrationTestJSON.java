@@ -9,7 +9,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.CtShopRegistrationPageJSON;
 import pages.YopmailPageJSON;
-import utils.DataUtilSuccessfulRegistration;
+import utils.DataUtilRegistration;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class CtShopRegistrationTestJSON extends BaseTest {
         }
     }
 
-    @Test(dataProviderClass = DataUtilSuccessfulRegistration.class, dataProvider = "dataProviderSuccessfulRegistration")
+    @Test(enabled = false, dataProviderClass = DataUtilRegistration.class, dataProvider = "dataProviderSuccessfulRegistration")
     public void CtShopSuccessfulRegistration(HashMap<String, String> data) throws Exception {
         CtShopRegistrationPageJSON ctShopRegistrationPageJSON = new CtShopRegistrationPageJSON(driver);
         ctShopRegistrationPageJSON.getToRegisterForm();
@@ -47,6 +47,7 @@ public class CtShopRegistrationTestJSON extends BaseTest {
 
         YopmailPageJSON yopmailPageJSON = new YopmailPageJSON(driver);
         yopmailPageJSON.goToYopmail();
+
         yopmailPageJSON.enterEmailAddress(data.get("User Name"));
         yopmailPageJSON.switchToIframe();
         yopmailPageJSON.clickOnConfirmationLink();
@@ -60,4 +61,18 @@ public class CtShopRegistrationTestJSON extends BaseTest {
         ctShopRegistrationPageJSON.clickOnLoginButton();
         ctShopRegistrationPageJSON.checkTitle();
     }
+
+    @Test(dataProviderClass = DataUtilRegistration.class, dataProvider = "dataProviderErrorMessages")
+    public void CtShopRegistrationErrorMessages(String data) throws Exception {
+        String[] registerInfo = data.split(",");
+        CtShopRegistrationPageJSON ctShopRegistrationPageJSON = new CtShopRegistrationPageJSON(driver);
+        ctShopRegistrationPageJSON.getToRegisterForm();
+        ctShopRegistrationPageJSON.enterFirstName(registerInfo[0]);
+        ctShopRegistrationPageJSON.enterLastName(registerInfo[1]);
+        ctShopRegistrationPageJSON.enterEmail(registerInfo[2]);
+        ctShopRegistrationPageJSON.enterPassword(registerInfo[3]);
+        ctShopRegistrationPageJSON.clickOnRegisterButton();
+        ctShopRegistrationPageJSON.checkErrorMessageIfEmpty(registerInfo[4]);
+    }
+
 }

@@ -1,0 +1,32 @@
+{
+  "registration info": [
+    {
+      "First Name": "",
+      "Last Name": "Testerovic",
+      "Email": "tester0012@yopmail.com",
+      "Password": "Qatester1309",
+      "Error Message": "Niste uneli ime!"
+    },
+    {
+      "First Name": "Tester0012",
+      "Last Name": "",
+      "Email": "tester0012@yopmail.com",
+      "Password": "Qatester1309",
+      "Error Message": "Niste uneli prezime!"
+    },
+    {
+      "First Name": "Tester0012",
+      "Last Name": "Testerovic",
+      "Email": "",
+      "Password": "Qatester1309",
+      "Error Message": "Niste uneli email!"
+    },
+    {
+      "First Name": "Tester0012",
+      "Last Name": "Testerovic",
+      "Email": "tester0012@yopmail.com",
+      "Password": "",
+      "Error Message": "Niste uneli šifru!"
+    }
+  ]
+}
