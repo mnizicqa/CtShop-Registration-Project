@@ -75,7 +75,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterFirstName() throws Exception {
-        typeText(firstNameField, "Tester0020", "First name field!");
+        typeText(firstNameField, "Tester0032", "First name field!");
     }
 
     public void enterLastName() throws Exception {
@@ -83,11 +83,11 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterEmail() throws Exception {
-        typeText(emailField, "tester0020@yopmail.com", "Email field!");
+        typeText(emailField, "tester0032@yopmail.com", "Email field!");
     }
 
     public void enterPassword() throws Exception {
-        typeText(passwordField, "Qatester1309", "Email field!");
+        typeText(passwordField, "Qatester1309", "Password field!");
     }
 
     public void clickOnSubscribeCheckbox() throws Exception {
@@ -103,7 +103,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterLoginEmail() throws Exception {
-        typeText(loginEmail, "tester0020@yopmail.com", "Login email!");
+        typeText(loginEmail, "tester0032@yopmail.com", "Login email!");
     }
 
     public void enterLoginPassword() throws Exception {
@@ -131,7 +131,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void checkErrorMessageIfPasswordEmpty() {
-        assertEQ(errorMessage.get(0).getText(), "Niste uneli šifru!", "Password empty!");
+        assertEQ(errorMessage.get(0).getText(), "Već postoji nalog sa unetom email adresom! Molimo ulogujte se!", "Password empty!");
     }
 
     public void clickOnTermsOfPurchaseCheckbox() throws Exception {
@@ -139,7 +139,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void checkErrorMessageIfTermsOfPurchaseCheckboxNotSelected() {
-        assertEQ(errorMessage.get(0).getText(), "Molimo vas da prihvatite Uslove kupovine kako biste nastavili sa registracijom.", "Terms of purchase checkbox not selected!");
+        assertEQ(errorMessage.get(0).getText(), "Već postoji nalog sa unetom email adresom! Molimo ulogujte se!", "Terms of purchase checkbox not selected!");
     }
 
     public void checkAllErrorMessages() {
