@@ -33,7 +33,7 @@ public class CtShopRegistrationTestJSON extends BaseTest {
         }
     }
 
-    @Test(enabled = false, dataProviderClass = DataUtilRegistration.class, dataProvider = "dataProviderSuccessfulRegistration")
+    @Test(dataProviderClass = DataUtilRegistration.class, dataProvider = "dataProviderSuccessfulRegistration")
     public void CtShopSuccessfulRegistration(HashMap<String, String> data) throws Exception {
         CtShopRegistrationPageJSON ctShopRegistrationPageJSON = new CtShopRegistrationPageJSON(driver);
         ctShopRegistrationPageJSON.getToRegisterForm();

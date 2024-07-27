@@ -75,7 +75,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterFirstName() throws Exception {
-        typeText(firstNameField, "Tester", "First name field!");
+        typeText(firstNameField, "Tester0020", "First name field!");
     }
 
     public void enterLastName() throws Exception {
@@ -83,7 +83,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterEmail() throws Exception {
-        typeText(emailField, "tester15@yopmail.com", "Email field!");
+        typeText(emailField, "tester0020@yopmail.com", "Email field!");
     }
 
     public void enterPassword() throws Exception {
@@ -103,7 +103,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterLoginEmail() throws Exception {
-        typeText(loginEmail, "tester15@yopmail.com", "Login email!");
+        typeText(loginEmail, "tester0020@yopmail.com", "Login email!");
     }
 
     public void enterLoginPassword() throws Exception {
