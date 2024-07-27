@@ -27,7 +27,7 @@ public class YopmailPage extends BasePage{
     }
 
     public void enterEmailAddress() throws Exception {
-        typeText(loginField, "tester0032", "Username entered!");
+        typeText(loginField, "tester0002", "Username entered!");
         typeText(loginField, Keys.ENTER, "Login");
     }
 

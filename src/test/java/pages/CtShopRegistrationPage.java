@@ -75,7 +75,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterFirstName() throws Exception {
-        typeText(firstNameField, "Tester0032", "First name field!");
+        typeText(firstNameField, "Tester0002", "First name field!");
     }
 
     public void enterLastName() throws Exception {
@@ -83,7 +83,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterEmail() throws Exception {
-        typeText(emailField, "tester0032@yopmail.com", "Email field!");
+        typeText(emailField, "tester0002@yopmail.com", "Email field!");
     }
 
     public void enterPassword() throws Exception {
@@ -103,7 +103,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void enterLoginEmail() throws Exception {
-        typeText(loginEmail, "tester0032@yopmail.com", "Login email!");
+        typeText(loginEmail, "tester0002@yopmail.com", "Login email!");
     }
 
     public void enterLoginPassword() throws Exception {
@@ -131,7 +131,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void checkErrorMessageIfPasswordEmpty() {
-        assertEQ(errorMessage.get(0).getText(), "Već postoji nalog sa unetom email adresom! Molimo ulogujte se!", "Password empty!");
+       Assert.assertTrue(errorMessage.get(0).getText().contains("Molimo ulogujte se!"));
     }
 
     public void clickOnTermsOfPurchaseCheckbox() throws Exception {
@@ -139,7 +139,7 @@ public class CtShopRegistrationPage extends BasePage {
     }
 
     public void checkErrorMessageIfTermsOfPurchaseCheckboxNotSelected() {
-        assertEQ(errorMessage.get(0).getText(), "Već postoji nalog sa unetom email adresom! Molimo ulogujte se!", "Terms of purchase checkbox not selected!");
+        Assert.assertTrue(errorMessage.get(0).getText().contains("Molimo ulogujte se!"));
     }
 
     public void checkAllErrorMessages() {

@@ -116,8 +116,4 @@ public class CtShopRegistrationPageJSON extends BasePage {
     public void checkErrorMessageIfEmpty(String errorMessageIfEmpty) {
         assertEQ(errorMessage.get(0).getText(), errorMessageIfEmpty, "First name, last name, email, password have not been entered!");
     }
-
-    public void clickOnTermsOfPurchaseCheckbox(String termsOfPurchaseCheckbox) throws Exception {
-        click(driver.findElement(By.xpath("//input[@name='" + termsOfPurchaseCheckbox + "']")), "Terms of purchase checkbox!");
-    }
 }
