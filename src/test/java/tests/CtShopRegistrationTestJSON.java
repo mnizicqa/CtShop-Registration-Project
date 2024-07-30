@@ -74,5 +74,4 @@ public class CtShopRegistrationTestJSON extends BaseTest {
         ctShopRegistrationPageJSON.clickOnRegisterButton();
         ctShopRegistrationPageJSON.checkErrorMessageIfEmpty(registerInfo[4]);
     }
-
 }

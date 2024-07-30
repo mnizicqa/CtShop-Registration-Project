@@ -18,10 +18,11 @@ public class DataUtilRegistration {
     public Object[] dataProviderSuccessfulRegistration() {
         JSONParser parser = new JSONParser();
         JSONObject jsonObject = null;
+        String fileNameSuccessfulRegistration = "src/test/test_data/testDataSuccessfulRegistration.json";
 
         // Read JSON file
         try {
-            Object obj = parser.parse(new FileReader("src/test/test_data/testDataSuccessfulRegistration.json"));
+            Object obj = parser.parse(new FileReader(fileNameSuccessfulRegistration));
             jsonObject = (JSONObject) obj;
         } catch (IOException | ParseException e) {
             e.printStackTrace();
@@ -49,11 +50,12 @@ public class DataUtilRegistration {
     public Object[] dataProviderErrorMessages() {
         JSONParser parser = new JSONParser();
         JSONObject jsonObject;
+        String fileNameErrorMessages = "src/test/test_data/testDataErrorMessages.json";
 
         // Read JSON data
         Object obj = null;
         try {
-            obj = parser.parse(new FileReader("src/test/test_data/testDataErrorMessages.json"));
+            obj = parser.parse(new FileReader(fileNameErrorMessages));
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
