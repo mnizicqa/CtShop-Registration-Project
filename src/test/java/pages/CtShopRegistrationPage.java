@@ -19,6 +19,9 @@ public class CtShopRegistrationPage extends BasePage {
     @FindBy(css = ".logo a")
     WebElement logo;
 
+    @FindBy(css = ".cm-btn-success")
+    WebElement cookiesButton;
+
     @FindBy(css = ".first .modal-link")
     WebElement profileLink;
 
@@ -69,6 +72,7 @@ public class CtShopRegistrationPage extends BasePage {
 
     public void getToRegisterForm() throws Exception {
         assertTrueDisplayed(logo, "Logo displayed!");
+        click(cookiesButton, "Accept cookies button clicked!");
         click(profileLink, "Profile link!");
         click(emailLoginButton, "Email login button!");
         click(createAccountLink, "Create account link!");

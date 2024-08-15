@@ -3,6 +3,6 @@
 <suite name="Ct Shop Registration" thread-count="1" data-provider-thread-count="1">
     <suite-files>
         <suite-file path="runner-testswithoutjson.xml"/>
-        <suite-file path="runner-testswithjson.xml"/>
+        <suite-file path="runner-testswithoutjson.xml"/>
     </suite-files>
 </suite>
